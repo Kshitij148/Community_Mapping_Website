@@ -77,7 +77,9 @@ const Login = ({history}) => {
 
 	return (
 	<Fragment>
-   <div className="background">
+            <div className="background" >
+
+
     <div className="layer">
  
     <div className="login-form">

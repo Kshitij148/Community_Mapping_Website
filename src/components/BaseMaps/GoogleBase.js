@@ -1,42 +1,37 @@
 /*
-* Base Map #3
-*/
+ * Base Map #3
+ */
 
 import React from "react";
 import env from "react-dotenv";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  withGoogleMap,
-  withScriptjs,
-  GoogleMap,
-} from "react-google-maps";
+import { useSelector } from "react-redux";
+import { withGoogleMap, withScriptjs, GoogleMap } from "react-google-maps";
 
 function Map() {
-  const lng = useSelector((state) => state.mapInfo.lng)
-  const lat = useSelector((state) => state.mapInfo.lat)
-
-  const googleToken = env.G_TOKEN;
+  const lng = useSelector((state) => state.mapInfo.lng);
+  const lat = useSelector((state) => state.mapInfo.lat);
+  const zoom = useSelector((state) => state.mapInfo.zoom);
 
   return (
     <GoogleMap
-      defaultZoom={2}
-      defaultCenter={{ lat: {lat}, lng: {lng}}}
-    >
-    </GoogleMap>
+      defaultZoom={zoom}
+      defaultCenter={{ lat: { lat }, lng: { lng } }}
+    />
   );
 }
 
-const G_BaseMap = withScriptjs(withGoogleMap(Map));
+const GoogleBaseMap = withScriptjs(withGoogleMap(Map));
 
-export default function App() {
+export default function GoogleBase() {
+  const googleToken = env.G_TOKEN;
+
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-      <G_BaseMap
-        // "https://maps.googleapis.com/maps/api/js?key=${googleToken}&v=3.exp&libraries=geometry,drawing,places"
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100%` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
+      <GoogleBaseMap
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places&key=${googleToken}`}
+        loadingElement={<div style={{ height: "100%" }} />}
+        containerElement={<div style={{ height: "100%" }} />}
+        mapElement={<div style={{ height: "100%" }} />}
       />
     </div>
   );
