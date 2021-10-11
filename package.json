@@ -1,0 +1,73 @@
+{
+    "name": "use-mapbox-gl-js-with-react",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@atlaskit/css-reset": "^6.1.4",
+        "@atlaskit/dropdown-menu": "^10.1.9",
+        "@mapbox/mapbox-gl-geocoder": "^4.7.4",
+        "@mapbox/mapbox-sdk": "^0.13.0",
+        "@material-ui/core": "^4.12.3",
+        "@material-ui/icons": "^4.11.2",
+        "@material/checkbox": "^13.0.0",
+        "@reduxjs/toolkit": "^1.6.0",
+        "@turf/bbox-polygon": "^6.5.0",
+        "@turf/helpers": "^6.5.0",
+        "@turf/turf": "^6.5.0",
+        "@watergis/mapbox-gl-legend": "^1.1.7",
+        "axios": "^0.21.4",
+        "bingmaps-react": "^1.1.0",
+        "cors": "^2.8.5",
+        "font-awesome": "^4.7.0",
+        "labeled-checkbox-material-ui": "^2.8.0",
+        "mapbox-gl": "^2.3.0",
+        "mapbox-gl-controls": "^2.3.1",
+        "mapbox-layer-control": "0.0.95",
+        "node-sass": "^6.0.1",
+        "nodemon": "^2.0.7",
+        "pg": "^8.7.1",
+        "react": "^17.0.2",
+        "react-bootstrap": "^1.6.4",
+        "react-bootstrap-tabs": "^2.0.0",
+        "react-dom": "^17.0.2",
+        "react-dotenv": "^0.1.3",
+        "react-dropdown-tree-select": "^2.5.1",
+        "react-floating-dropdown": "^1.0.4",
+        "react-google-maps": "^9.4.5",
+        "react-pro-sidebar": "^0.7.1",
+        "react-redux": "^7.2.4",
+        "react-rnd": "^10.3.4",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^4.0.3",
+        "react-scrollbars-custom": "^4.0.27",
+        "react-simple-tree-menu": "^1.1.18",
+        "react-tabs": "^3.2.2",
+        "semantic-ui-css": "^2.4.1",
+        "semantic-ui-react": "^2.0.3",
+        "styled-components": "^5.3.1",
+        "validator": "^13.6.0"
+    },
+    "scripts": {
+        "start": "react-dotenv && react-scripts start",
+        "build": "react-dotenv && react-scripts build"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app"
+        ]
+    },
+    "browserslist": [
+        "defaults",
+        "not ie 11"
+    ],
+    "react-dotenv": {
+        "whitelist": [
+            "MB_TOKEN",
+            "G_TOKEN",
+            "B_TOKEN"
+        ]
+    },
+    "proxy": "http://localhost:5000",
+    "author": "Mapbox",
+    "license": "MIT"
+}
