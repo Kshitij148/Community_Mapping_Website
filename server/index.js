@@ -17,7 +17,9 @@ app.post("/userdata",async(req,res) => {
 
 		console.log(req.body);
 	
-		var {username, password, email, number} = req.body;
+		var { username, password, email, number } = req.body;
+
+		console.log(username);
 		
 		//console.log(username);
 		const newUser = await pool.query("INSERT INTO user_details(username,password,email,number) VALUES($1,$2,$3,$4) RETURNING *",[username,password,email,number]);
@@ -35,7 +37,7 @@ app.get("/userdata",async (req,res) =>{
 
 			const allData= await pool.query("SELECT* FROM user_details");
 			res.json(allData.rows);
-			console.log("in here");
+		
 
 			
 
@@ -48,8 +50,10 @@ app.get("/userdata",async (req,res) =>{
 })
 
 
+
+
 app.listen(8000,() =>{
 	
-	console.log("server has started on port 5000");
+	console.log("server has started on port 8000");
 
 });
